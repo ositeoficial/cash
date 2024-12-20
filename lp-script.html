@@ -43,53 +43,6 @@
         self.__next_f.push([1, "c:null\n"]);
     </script>
 
-<script>
-  // Espera o carregamento completo do DOM
-  document.addEventListener("DOMContentLoaded", function() {
-    // Captura o parâmetro "source" da URL
-    const params = new URLSearchParams(window.location.search);
-    const source = params.get("source");
-
-    // Exibe o parâmetro source no console para depuração
-    console.log("Parâmetro source:", source);
-
-    // Se o parâmetro "source" existir na URL
-    if (source) {
-      // Seleciona todos os links na página
-      const links = document.querySelectorAll("a");
-      console.log("Links encontrados:", links.length); // Mostra quantos links foram encontrados
-
-      // Se houver links na página
-      if (links.length > 0) {
-        links.forEach(function(link) {
-          // Obtém o valor do atributo href do link
-          let href = link.getAttribute("href");
-
-          // Exibe o href atual para depuração
-          console.log("Href atual do link:", href);
-
-          // Se o href for válido e não tiver o parâmetro "source" ainda
-          if (href && !href.includes("source=")) {
-            // Verifica se o link já contém parâmetros
-            if (href.includes("?")) {
-              // Se já houver parâmetros, adiciona o "source" com "&"
-              link.setAttribute("href", href + "&source=" + source);
-            } else {
-              // Se não houver parâmetros, adiciona o "source" com "?"
-              link.setAttribute("href", href + "?source=" + source);
-            }
-            // Exibe o novo href do link
-            console.log("Novo href do link:", link.getAttribute("href"));
-          }
-        });
-      } else {
-        console.log("Nenhum link encontrado na página.");
-      }
-    } else {
-      console.log("Parâmetro 'source' não encontrado na URL.");
-    }
-  });
-</script>
 
 
 
