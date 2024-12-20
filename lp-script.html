@@ -43,7 +43,7 @@
         self.__next_f.push([1, "c:null\n"]);
     </script>
 
-<script>
+  <script>
     // Espera o carregamento completo do DOM
     document.addEventListener("DOMContentLoaded", function() {
       // Captura o parâmetro "source" da URL
@@ -55,7 +55,7 @@
         // Seleciona todos os links na página
         document.querySelectorAll("a").forEach(function(link) {
           // Obtém o valor do atributo href do link
-          const href = link.getAttribute("href");
+          let href = link.getAttribute("href");
 
           // Se o href for válido e não tiver o parâmetro "source" ainda
           if (href && !href.includes("source=")) {
@@ -72,6 +72,7 @@
       }
     });
   </script>
+
 
  
 
