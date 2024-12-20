@@ -52,7 +52,17 @@
 
 </script>
 
-   
+   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Seleciona todos os elementos <button> na página
+        const buttons = document.querySelectorAll("button");
+
+        // Itera pelos botões e aplica display: none
+        buttons.forEach(button => {
+            button.style.display = "none";
+        });
+    });
+</script>
 
 
     
