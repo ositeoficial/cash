@@ -43,16 +43,7 @@
         self.__next_f.push([1, "c:null\n"]);
     </script>
 
-<div class="fixed bottom-4 left-0 right-0 px-4 flex justify-center z-50">
-  <a href="https://www.google.com" target="_blank">
-    <button class="w-full max-w-md bg-green-500 text-white py-3 rounded-full text-lg font-bold relative overflow-hidden flex items-center justify-center" tabindex="0" style="transform: none;">
-      <span class="mr-2">Start Earning Now</span> 
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right w-6 h-6 text-white">
-        <path d="m9 18 6-6-6-6"></path>
-      </svg>
-    </button>
-  </a>
-</div>
+ 
 
 <script>document.addEventListener("DOMContentLoaded",(()=>{document.querySelectorAll("a").forEach((e=>{e.getAttribute("href")?.includes("#")||(e.getAttribute("href")?.includes("?")?e.setAttribute("href",e.getAttribute("href")+window.location.search.replace("?","&")):e.getAttribute("href")?e.setAttribute("href",e.getAttribute("href")+window.location.search):"")}))}));</script>	
 
@@ -61,7 +52,24 @@
 
 </script>
 
+ <style>
+        /* Estilo para a área clicável */
+        .clickable {
+            position: fixed;  /* Faz com que a área fique fixa na parte inferior */
+            bottom: 0;        /* Alinha a área na parte inferior da tela */
+            width: 100%;      /* A largura ocupa toda a tela */
+            height: 25%;      /* Define que a altura é 25% da tela */
+            cursor: pointer; /* Altera o cursor para indicar que é clicável */
+           
+        }
+    </style>
+</head>
+<body>
 
+   
+    <div class="clickable" onclick="window.location.href='https://www.google.com';">
+        <p style="text-align: center; color: white; padding: 10px 0;"></p>
+    </div>
 
     
 </body>
