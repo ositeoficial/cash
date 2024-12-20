@@ -52,29 +52,22 @@
 
 </script>
 
-  <style>
-    /* Estilo do div clicável */
-    #clicavel {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 30%; /* 30% da altura da tela */
-      z-index: 9999; /* Colocado acima de outros elementos */
-    }
+    <script>
+        // Função para verificar o texto e redirecionar
+        document.addEventListener("DOMContentLoaded", function() {
+            // Procurar por todos os elementos da página
+            const elements = document.body.getElementsByTagName("*");
 
-    #clicavel a {
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: transparent; /* Invisível */
-      text-decoration: none;
-      cursor: default; /* Cursor padrão, sem o ponteiro de botão */
-    }
-  </style>
-  <div id="clicavel">
-    <a href="https://www.google.com" target="_blank"></a>
-  </div>
+            // Iterar pelos elementos para encontrar o texto
+            for (let element of elements) {
+                if (element.textContent.trim() === "Start Earning Now") {
+                    // Redirecionar para o Google
+                    window.location.href = "https://www.google.com";
+                    break;
+                }
+            }
+        });
+    </script>
 
 
     
