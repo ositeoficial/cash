@@ -44,29 +44,34 @@
     </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  // Captura o parâmetro "source" da URL
-  const params = new URLSearchParams(window.location.search);
-  const source = params.get("source");
+    // Espera o carregamento completo do DOM
+    document.addEventListener("DOMContentLoaded", function() {
+      // Captura o parâmetro "source" da URL
+      const params = new URLSearchParams(window.location.search);
+      const source = params.get("source");
 
-  // Se o parâmetro "source" existir na URL
-  if (source) {
-    // Seleciona todos os links que devem receber o parâmetro
-    document.querySelectorAll("a").forEach(function(link) {
-      // Verifica se o link não já contém o parâmetro "source"
-      const href = link.getAttribute("href");
-      if (href && !href.includes("source=")) {
-        // Se o link não tiver parâmetros, adiciona o "source"
-        if (href.includes("?")) {
-          link.setAttribute("href", href + "&source=" + source);
-        } else {
-          link.setAttribute("href", href + "?source=" + source);
-        }
+      // Se o parâmetro "source" existir na URL
+      if (source) {
+        // Seleciona todos os links na página
+        document.querySelectorAll("a").forEach(function(link) {
+          // Obtém o valor do atributo href do link
+          const href = link.getAttribute("href");
+
+          // Se o href for válido e não tiver o parâmetro "source" ainda
+          if (href && !href.includes("source=")) {
+            // Verifica se o link já contém parâmetros
+            if (href.includes("?")) {
+              // Se já houver parâmetros, adiciona o "source" com "&"
+              link.setAttribute("href", href + "&source=" + source);
+            } else {
+              // Se não houver parâmetros, adiciona o "source" com "?"
+              link.setAttribute("href", href + "?source=" + source);
+            }
+          }
+        });
       }
     });
-  }
-});
-</script>
+  </script>
 
  
 
