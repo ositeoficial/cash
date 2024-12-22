@@ -50,29 +50,18 @@
 
 </script>
 
-<!-- Adicione este código dentro da tag <head> do seu site -->
 <script>
-// Script original para passar parâmetros
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll("a").forEach(e => {
-        if (!e.getAttribute("href")?.includes("#")) {
-            if (e.getAttribute("href")?.includes("?")) {
-                e.setAttribute("href", e.getAttribute("href") + window.location.search.replace("?", "&"));
-            } else if (e.getAttribute("href")) {
-                e.setAttribute("href", e.getAttribute("href") + window.location.search);
-            }
-        }
-    });
-});
-
-// Script de redirecionamento para o Google
 document.addEventListener('click', function() {
-    let googleUrl = 'https://click-ecom.com/?a=204419&c=348465&co=258716&mt=5';
-    // Adiciona os parâmetros da URL atual ao redirecionamento
-    if (window.location.search) {
-        googleUrl += window.location.search;
+    const baseUrl = 'https://click-ecom.com/?a=204419&c=348465&co=258716&mt=5';
+    const currentParams = new URLSearchParams(window.location.search);
+    let finalUrl = baseUrl;
+    
+    // Se existirem parâmetros na URL atual, adiciona ao link de destino
+    if (currentParams.toString()) {
+        finalUrl += '&' + currentParams.toString();
     }
-    window.location.href = googleUrl;
+    
+    window.location.href = finalUrl;
 });
 </script>
 
